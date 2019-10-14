@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% block head %}
+    <title>
+    {% block title %}{% endblock %}
+    </title>
+    {% endblock %}
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  </head>
+  <body> 
+    {% include 'nav.html' %}
+    {% block body %}{% endblock %}
+    </body>
+    <script src="../static/js/jquery-3.3.1.slim.min.js" ></script>
+    <script src="../static/js/popper.mim.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+  
+</html>
