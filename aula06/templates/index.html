@@ -1,0 +1,17 @@
+<!-- "Child Template" -->
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %} Meu primeiro Form {% endblock %}
+
+{% block page_content %}
+<div class="page-header">
+  <h1 class="mt-1" style="color: aliceblue;" >Hello, {% if nome %} {{ nome }}{% else %}  Desconhecido... {% endif %} </h1>
+</div>
+<div class="card">
+  <div class="card-body">
+  {{ wtf.quick_form(form) }}
+</div>
+
+</div>
+{% endblock %}

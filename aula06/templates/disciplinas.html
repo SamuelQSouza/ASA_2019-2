@@ -1,0 +1,43 @@
+<!-- "Child Template" -->
+{% extends "base.html" %}
+{% block title %} Index {% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block body %}  
+
+  <div class="container">
+      <div class="row">
+        <div class="col-sm">
+        <ul class="mt-4">
+          {% for number in lista_disc %}
+            <li class="list-group-item">{{ number }}</li>
+          {% endfor %}
+        </ul>
+        </div>
+        <div class="col-sm">
+        <ol class="mt-4">
+          {% for number in lista_disc %}
+            <li class="list-group-item">{{ number }}</li>
+          {% endfor %}
+        </ol>
+        </div>
+        <div class="col-sm">
+        <ul class="mt-4">
+          {% for item in dict_disc %}
+          <li class="list-group-item">{{ item, dict_disc[item] }}</li>
+          {% endfor %}
+        </ul>
+        </div>
+        <div class="col-sm">
+        <ol class="mt-4">
+          {% for item in dict_disc %}
+              <li class="list-group-item">{{ item, dict_disc[item] }}</li>
+          {% endfor %}
+        </ol>
+        </div>
+      </div>
+  </div>
+  <p>Carga Horária: {{ dict_disc["IEC"]}} e {{ dict_disc["CALC2"] }}.</p>
+{% endblock %}
+

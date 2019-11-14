@@ -1,0 +1,14 @@
+<!-- "Child Template" -->
+{% extends "base.html" %}
+{% block title %} Index {% endblock %}
+{% block head %}
+  {{ super() }}
+{% endblock %}
+{% block body %}
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Funcionando</h1>
+      <p class="lead">Totalmente Excelente!!!</p>
+    </div>
+  </div>
+{% endblock %}
