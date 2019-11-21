@@ -1,7 +1,10 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
+from clientForm import ClientForm
+from flask import flash
 
 app = Flask(__name__)
+app.config["SECRET_KEY"] = 'minha palavra secreta'
 Bootstrap(app)
 
 @app.route('/')
@@ -31,6 +34,16 @@ def seila():
         return render_template('index2.html')
     except Exception as e:
         return str(e)
+
+@app.route('/cliente', methods=['GET','POST'])
+def index():
+    nome = None
+    form = ClientForm()
+    if form.validate_on_submit():
+        nome = form.nome.data
+        flash('it\'s work')
+        form.nome.data = ''
+    return render_template('index.html', form = form, nome=nome)
 
 
 if __name__ == "__main__":

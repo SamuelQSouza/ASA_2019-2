@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-</head>
-<body>
+<!-- "Child Template" -->
+{% extends "base.html" %}
+{% block title %}Meu primeiro Form WTF{% endblock %}
+{% block page_content %}
+<div class="page-header">
+  <h1>Hello, {% if nome %}{{ nome }}{% else %} Desconhecido {% endif %}</h1>
+  {{wtf.quick_form(form)}}
+</div>
+
+{% endblock %}
+{% block body %}
     <h1>{{message}}</h1>
     <p>{{paragraph}}</p>
-</body>
-</html>
+{% endblock %}
